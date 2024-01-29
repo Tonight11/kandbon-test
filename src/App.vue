@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen dark:bg-gray-900">
+  <div class="flex justify-between min-h-screen dark:bg-gray-900">
     <div class="flex items-start bg-gray-800 dark:bg-white-700 overflow-x-auto">
       <div class="flex space-x-4">
         <Stage
