@@ -1,30 +1,33 @@
 <template>
-  <div class="border p-4 rounded-md m-4 w-64 bg-white shadow-md">
-    <h2 class="text-lg font-bold mb-4">{{ stage.title }}</h2>
+  <div class="p-4 rounded-md m-4 w-64 bg-gray-800 dark:bg-gray-700 shadow-2xl">
+    <h2 class="text-lg font-bold mb-4 text-white dark:text-gray-200">
+      {{ stage.title }}
+    </h2>
     <div class="space-y-2">
       <draggable v-model="stage.tasks" tag="ul" group="meals">
-        <template #item="{ element: task  }">
+        <template #item="{ element: task }">
           <Task
             :key="task.id"
             :task="task"
             @removeTask="removeTask"
             @editTask="editTask"
             @moveTask="moveTask"
-          /> </template
-      ></draggable>
+          />
+        </template>
+      </draggable>
     </div>
     <div class="mt-4">
       <input
         v-model="newTaskText"
-        class="border p-2 rounded-md"
+        class="border p-2 rounded-md bg-gray-700 dark:bg-gray-600 text-white dark:text-gray-400"
         type="text"
-        placeholder="Enter task text"
+        placeholder="Введите задачу"
       />
       <button
         @click="addNewTask"
-        class="mt-2 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
+        class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition dark:bg-indigo-500 dark:hover:bg-indigo-600"
       >
-        Add Task
+        Добавить задачу
       </button>
     </div>
   </div>

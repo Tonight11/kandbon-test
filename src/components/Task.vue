@@ -1,21 +1,21 @@
 <template>
   <div
-    class="border p-2 mb-2 rounded-md bg-white shadow-md cursor-move"
+    class="border p-2 mb-2 rounded-md bg-gray-700 dark:bg-gray-600 shadow-md cursor-move"
     draggable="true"
   >
-    <p class="mb-2">{{ task.text }}</p>
+    <p class="mb-2 text-white dark:text-gray-400">{{ task.text }}</p>
     <div class="flex space-x-2">
       <button
         @click="removeTask"
         class="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
       >
-        Remove
+        Удалить
       </button>
       <button
         @click="editTask"
-        class="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+        class="px-2 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition dark:bg-indigo-500 dark:hover:bg-indigo-600"
       >
-        Edit
+        Редактировать
       </button>
     </div>
   </div>

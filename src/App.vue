@@ -1,11 +1,11 @@
 <template>
-  <div class="flex">
-    <div class="flex items-start justify-center min-h-screen bg-gray-100">
-      <div class="flex">
+  <div class="flex min-h-screen dark:bg-gray-900">
+    <div class="flex items-start bg-gray-800 dark:bg-white-700 overflow-x-auto">
+      <div class="flex space-x-4">
         <Stage
-          v-for="meal in stages"
-          :key="meal.id"
-          :stage="meal"
+          v-for="stage in stages"
+          :key="stage.id"
+          :stage="stage"
           @addTask="addTask"
           @removeTask="removeTask"
           @editTask="editTask"
@@ -13,25 +13,24 @@
         />
       </div>
     </div>
-    <div class="p-4 bg-gray-200 border rounded-md ml-4">
+    <div class="p-4 bg-gray-700 dark:bg-gray-600 rounded-md">
       <input
         v-model="newStageTitle"
-        class="border p-2 rounded-md"
+        class="block border p-2 rounded-md dark:bg-gray-800 dark:text-gray-300"
         type="text"
-        placeholder="Enter stage title"
+        placeholder="Новая группа"
       />
       <button
         @click="addNewStage"
-        class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+        class="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition dark:bg-indigo-500 dark:hover:bg-indigo-600"
       >
-        Add Stage
+        Добавит группу
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-
   import { storeToRefs } from 'pinia'
   import { useTodoStore } from '@/stores/toDo'
   import { ref } from 'vue'

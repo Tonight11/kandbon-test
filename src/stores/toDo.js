@@ -7,12 +7,12 @@ export const useTodoStore = defineStore('todo', () => {
       id: 1,
       title: 'To Do',
       tasks: [
-        { id: 1, text: 'Task 1' },
-        { id: 2, text: 'Task 2' },
+        { id: 1, text: 'Убраться' },
+        { id: 2, text: 'Помыться' },
       ],
     },
-    { id: 2, title: 'In Progress', tasks: [] },
-    { id: 3, title: 'Done', tasks: [] },
+    { id: 2, title: 'В процессе', tasks: [] },
+    { id: 3, title: 'Сделано', tasks: [] },
   ])
 
   const addStage = (title) => {
